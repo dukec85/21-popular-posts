@@ -19,7 +19,9 @@ const Route = use('Route');
 
 Route.on('/').render('welcome');
 
-Route.get('/', 'WelcomePage.create');
+Route.get('/register', 'UserController.create');
+Route.post('/register', 'UserController.store');
 
-Route.get('/register', 'RegisterForm.create');
-Route.post('/register', 'RegisterForm.store');
+Route.get('/login', 'SessionController.create');
+Route.post('/login', 'SessionController.store');
+Route.any('/login', 'SessionController.destroy');
