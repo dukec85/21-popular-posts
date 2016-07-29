@@ -19,8 +19,9 @@ class SessionController {
         .flash();
 
 
-      response.redirect('/');
+      response.redirect('/post');
     } catch (e) {
+      console.log(e);
 
       yield request.withAll()
 

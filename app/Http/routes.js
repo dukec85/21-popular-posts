@@ -25,3 +25,4 @@ Route.post('/register', 'UserController.store');
 Route.get('/login', 'SessionController.create');
 Route.post('/login', 'SessionController.store');
 Route.any('/login', 'SessionController.destroy');
+Route.get('/posts').render('post.index');
