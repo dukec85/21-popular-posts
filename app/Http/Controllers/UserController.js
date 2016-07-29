@@ -10,6 +10,7 @@ class UserController {
 
   * store(request, response) {
     const { username, email, password } = request.all();
+
     try {
       yield User.create({ email, password: yield Hash.make(password), username });
 
@@ -20,7 +21,6 @@ class UserController {
 
       response.redirect('/login');
     } catch (e) {
-      console.log(e);
 
       yield request.withAll()
 

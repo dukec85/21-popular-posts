@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
   <section>
      <div class="__wrapper">
        <nav>
@@ -33,6 +34,28 @@
          </div>
        </nav>
 
+       <main>
+
+         {# <section> #}
+       <div class="container ">
+         {% if old('error') %}
+             <div class="row">
+             {# <div class="col s12 offset-m1 m10"> #}
+               <div class="chip red accent-1 col s12 offset-m1 m10">
+                 <i class="close material-icons">close</i>
+                 Warning: {{ old('error') }}
+               </div>
+             {# </div> #}
+           </div>
+         {% endif %}
+
+           {% if old('success') %}
+           <div class="chip green accent-2 col s12 offset-m1 m10">
+               <i class="close material-icons">close</i>
+               {{ old('success') }}
+           </div>
+           {% endif %}
+       {# <div class=""> #}
 
        {% block content %}
 
