@@ -3,7 +3,7 @@
 class UserController {
 
   * index(request, response) {
-    //
+
   }
 
   * create(request, response) {
