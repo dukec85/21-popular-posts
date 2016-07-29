@@ -1,5 +1,6 @@
 'use strict';
-
+const User = use('App/Model/User');
+const Hash = use('Hash');
 class UserController {
 
   * index(request, response) {
@@ -11,7 +12,13 @@ class UserController {
   }
 
   * store(request, response) {
+    const { username, email, password } = request.all();
 
+    try {
+      yield User.create({ email, password: yield Hash.make(password) });
+    } catch (e) {
+
+    }
   }
 
   * show(request, response) {
