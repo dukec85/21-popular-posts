@@ -19,10 +19,17 @@ const Route = use('Route');
 
 Route.on('/').render('welcome');
 
+
 Route.get('/register', 'UserController.create');
 Route.post('/register', 'UserController.store');
 
 Route.get('/login', 'SessionController.create');
 Route.post('/login', 'SessionController.store');
-Route.any('/login', 'SessionController.destroy');
+Route.any('/logout', 'SessionController.destroy');
+
 Route.get('/posts').render('post.index');
+
+Route.group('logged-in', () => {
+  Route.resource('/posts', 'PostController');
+  Route.resource('/posts/create', 'PostController.create');
+});

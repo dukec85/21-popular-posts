@@ -33,6 +33,15 @@ class SessionController {
       response.redirect('back');
     }
   }
+  * destroy(request, response) {
+    yield request.auth.logout();
+
+    yield request
+    .with({ success: 'You are logged out!' })
+    .flash();
+
+    response.redirect('/login');
+  }
 }
 
 module.exports = SessionController
