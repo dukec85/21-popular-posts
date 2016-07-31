@@ -2,4 +2,27 @@
 
 {% block content %}
 
+<ul action="/posts" class="collection with-header">
+  <li class="collection-header"><h4>Posts</h4><a href="/posts/create"><i class="medium material-icons">add</i></a></li>
+  <li class="collection-item">
+      <div class="row post-list__item">
+      {% for post in posts %}
+      <div class="thumbs-content__wrapper">
+      <div class="thumbs">
+        <i class="material-icons">thumb_up</i>
+        <h5 class="counter">5</h5>
+        <i class="material-icons">thumb_down</i>
+      </div>
+      <div class="row__item--1-4">
+        <div class="post-info">
+          <h4>{{ post.title }}</h4>
+          <p>Listed by: {{ post.user.username }}</p>
+        </div>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+  </li>
+</ul>
+
 {% endblock %}

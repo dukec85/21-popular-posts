@@ -27,9 +27,6 @@ Route.get('/login', 'SessionController.create');
 Route.post('/login', 'SessionController.store');
 Route.any('/logout', 'SessionController.destroy');
 
-Route.get('/posts').render('post.index');
-
 Route.group('logged-in', () => {
   Route.resource('/posts', 'PostController');
-  Route.resource('/posts/create', 'PostController.create');
-});
+}).middleware('auth');

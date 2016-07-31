@@ -15,4 +15,15 @@ class PostController {
     yield response.sendView('post.create');
   }
 
-module.exports = PostController
+  * store(request, response) {
+    const { title, post } = request.all();
+
+    yield request.authUser.posts()
+      .create({ title, post });
+
+    yield request.with({ success: 'New post listed!' }).flash();
+
+      response.redirect('/posts');
+  }
+
+module.exports = PostController;
