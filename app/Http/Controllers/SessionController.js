@@ -7,11 +7,9 @@ class SessionController {
   }
 
   * store(request, response) {
-
     const { username, password } = request.all();
 
     try {
-
       yield request.auth.attempt(username, password);
 
       yield request.with({ success: 'You are logged in!' })
@@ -19,7 +17,7 @@ class SessionController {
         .flash();
 
 
-      response.redirect('/post');
+      response.redirect('/posts');
     } catch (e) {
       console.log(e);
 
@@ -44,4 +42,4 @@ class SessionController {
   }
 }
 
-module.exports = SessionController
+module.exports = SessionController;

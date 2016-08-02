@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const Schema = use('Schema')
+const Schema = use('Schema');
 
 class PostsSchema extends Schema {
 
@@ -20,4 +20,4 @@ class PostsSchema extends Schema {
 
 }
 
-module.exports = PostSchema;
+module.exports = PostsSchema;

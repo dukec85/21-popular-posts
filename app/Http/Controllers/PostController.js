@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Post = use('App/Model/Post');
 
@@ -7,8 +7,7 @@ class PostController {
 
   * index(request, response) {
     const posts = yield Post.with('user').fetch();
-    yield response.sendView('posts', { posts: posts.toJSON() });
-
+    yield response.sendView('post.index', { posts: posts.toJSON() });
   }
 
   * create(request, response) {
@@ -21,9 +20,10 @@ class PostController {
     yield request.authUser.posts()
       .create({ title, post });
 
+
     yield request.with({ success: 'New post listed!' }).flash();
 
-      response.redirect('/posts');
+    response.redirect('/posts');
   }
-
+}
 module.exports = PostController;
