@@ -1,11 +1,8 @@
 {% extends 'master' %}
 
 {% block content %}
-  {% if currentUser %}
-    {% else %}
-    <h3>Welcome to Popular Posts!</h3>
-    <a href="/login">Login</a>
+<h2>Welcome to Popular Posts!</h2>
+<a href="/login" class="waves-effect deep-orange lighten-1 btn ">Log In</a>
+<a href="/register" class="waves-effect deep-orange lighten-1 btn">Register</a>
 
-    <a href="/register">Register</a>
-  {% endif %}
 {% endblock %}
