@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Popular Posts</title>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
@@ -16,10 +16,10 @@
 
   <section>
      <div class="__wrapper">
-       <nav>
+       <nav class=" indigo lighten-1">
          <div class="container">
            <div class="nav-wrapper">
-             <a href="/" class="brand-logo">PopularPosts</a>
+             <a href="/" class="brand-logo">Popular Posts</a>
              <ul id="nav-mobile" class="right hide-on-med-and-down">
                {% if currentUser %}
                  <li><a href="/posts">Posts</a></li>
@@ -33,6 +33,7 @@
            </div>
          </div>
        </nav>
+    </div>
 
        <main>
 
@@ -61,6 +62,25 @@
 
        {% endblock %}
          <div class="__footer">
+           {% block footer %}
+      <footer class="page-footer indigo lighten-1">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">This is definitely not a redit clone...</h5>
+            </div>
+            <div class="col l4 offset-l2 s12">
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+      {% endblock %}
          </div>
      </div>
    </section>

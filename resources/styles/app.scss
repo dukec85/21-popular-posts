@@ -20,3 +20,30 @@ main {
 .card {
   min-width: 25rem;
 }
+
+.collection-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-info {
+  margin: 1rem;
+}
+
+.post-list__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbs-content__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}

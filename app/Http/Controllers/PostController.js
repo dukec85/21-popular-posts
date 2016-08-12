@@ -7,6 +7,7 @@ class PostController {
 
   * index(request, response) {
     const posts = yield Post.with('user').fetch();
+
     yield response.sendView('post.index', { posts: posts.toJSON() });
   }
 
