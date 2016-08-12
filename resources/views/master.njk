@@ -14,10 +14,10 @@
 <body>
 
 
-  <section>
-     <div class="__wrapper">
-       <nav class=" indigo lighten-1">
-         <div class="container">
+  <section class="app">
+    <div class="__wrapper">
+      <nav class=" indigo lighten-1">
+        <div class="container">
            <div class="nav-wrapper">
              <a href="/" class="brand-logo">Popular Posts</a>
              <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -32,63 +32,60 @@
              </ul>
            </div>
          </div>
-       </nav>
+      </nav>
     </div>
 
-       <main>
-
-
-       <div class="container ">
-         {% if old('error') %}
-             <div class="row">
-
-               <div class="chip red accent-1 col s12 offset-m1 m10">
-                 <i class="close material-icons">close</i>
-                 Warning: {{ old('error') }}
-               </div>
-
-           </div>
-         {% endif %}
-
-           {% if old('success') %}
-           <div class="chip green accent-2 col s12 offset-m1 m10">
-               <i class="close material-icons">close</i>
-               {{ old('success') }}
-           </div>
-           {% endif %}
-
-
-       {% block content %}
-
-       {% endblock %}
-         <div class="__footer">
-           {% block footer %}
-      <footer class="page-footer indigo lighten-1">
-        <div class="container">
+    <main>
+      <div class="container ">
+        {% if old('error') %}
           <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">This is definitely not a redit clone...</h5>
-            </div>
-            <div class="col l4 offset-l2 s12">
+            <div class="chip red accent-1 col s12 offset-m1 m10">
+              <i class="close material-icons">close</i>
+              Warning: {{ old('error') }}
             </div>
           </div>
-        </div>
-        <div class="footer-copyright">
+        {% endif %}
+
+        {% if old('success') %}
+          <div class="row">
+            <div class="chip green accent-2 col s12 offset-m1 m10">
+              <i class="close material-icons">close</i>
+             Warning: {{ old('success') }}
+            </div>
+          </div>
+        {% endif %}
+
+
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </main>
+    <div class="__footer">
+      {% block footer %}
+        <footer class="page-footer indigo lighten-1">
           <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">This is definitely not a redit clone...</h5>
+              </div>
+            </div>
           </div>
-        </div>
-      </footer>
+          <div class="footer-copyright">
+            <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
       {% endblock %}
-         </div>
-     </div>
-   </section>
+    </div>
+  </section>
 
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-   <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
- </body>
- </html>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>
