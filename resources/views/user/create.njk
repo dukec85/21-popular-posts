@@ -1,0 +1,43 @@
+{% extends 'master' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col m10 offset-m1 s6">
+    <div class="card ">
+      <div class="card-content">
+        <span class="card-title">Register</span>
+          <div class="row">
+            <form action="/register" method="POST" class="col s12">
+              {{ csrfField }}
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="username" type="text" name="username" id="username" value="{{ old('username') }}">
+                  <label for="username">Username</label>
+                </div>
+                </div>
+                <div class="row">
+                <div class="input-field col s12">
+                  <input class="email" type="email" name="email" id="email" value="{{ old('email') }}">
+                  <label for="email">Email</label>
+                </div>
+                </div>
+                <div class="row">
+                <div class="input-field col s12">
+                  <input class="password" type="password" name="password" id="password">
+                  <label for="password">Password</label>
+                </div>
+                </div>
+              <div class="card-action">
+                <a href="/register" class=" btn">Register</a>
+                <button class="btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
+
+{% endblock %}
