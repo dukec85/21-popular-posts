@@ -437,6 +437,8 @@ var loader, define, requireModule, require, requirejs;
 (function(global) {
   'use strict';
 
+  var stats;
+
   // Save off the original values of these globals, so we can restore them if someone asks us to
   var oldGlobals = {
     loader: loader,
@@ -474,7 +476,6 @@ var loader, define, requireModule, require, requirejs;
     requirejs._stats = stats;
   }
 
-  var stats;
 
   resetStats();
 
@@ -566,7 +567,7 @@ var loader, define, requireModule, require, requirejs;
     this.finalized = false;
     this._foundDeps = false;
     this.isPending = false;
-    this.module = { exports: {}};
+    this.module = { exports: {} };
   };
 
   Module.prototype.reify = function() {
@@ -613,7 +614,7 @@ var loader, define, requireModule, require, requirejs;
     r['default'] = r;
     r.has = function(dep) {
       return has(resolve(dep, name));
-    }
+    };
     return r;
   };
 
